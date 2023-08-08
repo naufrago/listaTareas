@@ -1,0 +1,24 @@
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">tarea</th>
+        <th scope="col">completar</th>
+        <th scope="col">eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tarea of tareas;index as i">
+        <td>{{i+1}}</td>
+        <td>{{tarea}}</td>
+        <td>
+            <button class="btn btn-primary">completar</button>
+        </td>
+        <td>
+            <button class="btn btn-danger">eliminar</button>
+
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
