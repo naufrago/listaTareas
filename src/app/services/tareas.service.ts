@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
+import { Tareas } from '../interface/tareas.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TareasService {
-  public tareas=[
+  public tareas:Array<Tareas>=[
     {
       tarea:'cepillarse',
-      estado:false
+      estado:true
     },
     {
       tarea:'bañarce',
@@ -43,5 +44,26 @@ export class TareasService {
     })!
     tarea.estado=!tarea.estado
     console.log(this.tareas);
+  }
+
+  public tareasCompletas(){
+    let can = 0;
+    this.tareas.forEach(t=>{
+      if (t.estado) {
+        can++;
+      }
+    })
+    return can;
+  }
+  public insertar(nt:any){
+    let data={
+      tarea: nt,
+      estado:false
+    }
+    this.tareas.push(data)
+  }
+
+  public eliminar(x:string){
+    this.tareas=this.tareas.filter(tar => tar.tarea !== x)
   }
 }

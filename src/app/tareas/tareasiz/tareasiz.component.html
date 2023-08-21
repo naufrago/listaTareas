@@ -3,3 +3,13 @@
 <div class="contenedorizquierdo pt-4 pb-4 pl-5">
     tareas de la lista: {{cantidad}}
 </div>
+<br>
+<div class="contenedorizquierdo pt-4 pb-4 pl-5">
+    tareas de la lista completas: {{completas}}
+</div>
+<br>
+<div class="contenedorizquierdo pt-4 pb-4 pl-5">
+    tareas de la lista por completar: {{cantidad - completas}}
+</div>
+<br>
+<button class="btn btn-success"  (click)="insertar()">Insertar tarea</button>

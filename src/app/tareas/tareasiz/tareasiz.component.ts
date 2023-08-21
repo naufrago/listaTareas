@@ -17,4 +17,13 @@ export class TareasizComponent implements OnInit {
     return this.tareasService.tareas.length;
   }
 
+  public get  completas(){
+    return this.tareasService.tareasCompletas();
+  }
+
+  public insertar(){
+    let tar = prompt('Ingrese la nueva tarea!');
+    this.tareasService.insertar(tar)
+  }
+
 }

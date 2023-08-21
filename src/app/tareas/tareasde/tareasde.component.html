@@ -1,3 +1,5 @@
+
+<br>
 <table class="table table-hover">
     <thead>
       <tr>
@@ -10,12 +12,12 @@
     <tbody>
       <tr *ngFor="let tarea of tareas;index as i">
         <td>{{i+1}}</td>
-        <td>{{tarea.tarea}}</td>
+        <td><p  [ngClass]="tarea.estado?'text-success font-weight-bold':''">{{tarea.tarea}}</p></td>
         <td>
-            <button class="btn btn-primary" (click)="completar(tarea.tarea)">completar</button>
+            <button class="btn btn-primary" [disabled]="tarea.estado" (click)="completar(tarea.tarea)">completar</button>
         </td>
         <td>
-            <button class="btn btn-danger">eliminar</button>
+            <button class="btn btn-danger" (click)="eliminar(tarea.tarea)">eliminar</button>
 
         </td>
       </tr>

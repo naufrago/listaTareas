@@ -20,7 +20,11 @@ export class TareasdeComponent implements OnInit {
   }
 
   public completar(t: any) {
-    console.log(t);
+    this.tareasService.completarTarea(t);
   }
+
+ public eliminar(x:string){
+    this.tareasService.eliminar(x);
+ }
 
 }
